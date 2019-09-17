@@ -548,6 +548,32 @@ def register_mujoco_envs():
             ),
         )
     )
+
+    # Hurdle
+    register(
+        id='SawyerPushHurdle-v0',
+        entry_point='multiworld.envs.mujoco.sawyer_xyz'
+                    '.sawyer_push_hurdle:SawyerPushAndReachHurdleXYEasyEnv',
+        tags={
+            'git-commit-hash': 'b8d77fef5f3ebe4c1c9c3874a5e3faaab457a350',
+            'author': 'steven',
+        },
+        kwargs=dict(
+            force_puck_in_goal_space=False,
+            mocap_low=(-0.1, 0.55, 0.0),
+            mocap_high=(0.1, 0.65, 0.5),
+            hand_goal_low=(-0.1, 0.55),
+            hand_goal_high=(0.1, 0.65),
+            puck_goal_low=(-0.15, 0.5),
+            puck_goal_high=(0.15, 0.7),
+
+            hide_goal=True,
+            reward_info=dict(
+                type="state_distance",
+            ),
+        )
+    )
+
     register(
         id='SawyerPushNIPSEasyImage48-v0',
         entry_point='multiworld.core.image_env:ImageEnv',
