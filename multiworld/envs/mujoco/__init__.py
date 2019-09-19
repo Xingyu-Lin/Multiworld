@@ -564,8 +564,8 @@ def register_mujoco_envs():
             mocap_high=(0.1, 0.65, 0.5),
             hand_goal_low=(-0.1, 0.55),
             hand_goal_high=(0.1, 0.65),
-            puck_goal_low=(-0.15, 0.5),
-            puck_goal_high=(0.15, 0.7),
+            puck_goal_low=(0.1, 0.55),
+            puck_goal_high=(0.11, 0.6),
 
             hide_goal=True,
             reward_info=dict(

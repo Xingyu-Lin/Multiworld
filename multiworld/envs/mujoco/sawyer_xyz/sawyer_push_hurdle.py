@@ -26,9 +26,9 @@ class SawyerPushAndReachHurdleXYEnv(MujocoEnv, Serializable, MultitaskEnv):
             pos_action_scale=2. / 100,
             randomize_goals=True,
             hide_goal=False,
-            init_block_low=(-0.05, 0.55),
-            init_block_high=(0.05, 0.65),
-            puck_goal_low=(-0.05, 0.55),
+            init_block_low=(-0.04, 0.55),
+            init_block_high=(-0.02, 0.63),
+            puck_goal_low=(-0.05, 0.57),
             puck_goal_high=(0.05, 0.65),
             hand_goal_low=(-0.05, 0.55),
             hand_goal_high=(0.05, 0.65),
@@ -247,11 +247,11 @@ class SawyerPushAndReachHurdleXYEnv(MujocoEnv, Serializable, MultitaskEnv):
         return np.hstack((hand, puck))
 
     def sample_puck_xy(self):
-        raise NotImplementedError("Shouldn't you use "
-                                  "SawyerPushAndReachXYEasyEnv? Ask Vitchyr")
+        # raise NotImplementedError("Shouldn't you use "
+        #                           "SawyerPushAndReachXYEasyEnv? Ask Vitchyr")
         pos = np.random.uniform(self.init_block_low, self.init_block_high)
-        while np.linalg.norm(self.get_endeff_pos()[:2] - pos) < 0.035:
-            pos = np.random.uniform(self.init_block_low, self.init_block_high)
+        # while np.linalg.norm(self.get_endeff_pos()[:2] - pos) < 0.035:
+        #     pos = np.random.uniform(self.init_block_low, self.init_block_high)
         return pos
 
     def set_puck_xy(self, pos):
@@ -489,8 +489,8 @@ class SawyerPushAndReachHurdleXYEasyEnv(SawyerPushAndReachHurdleXYEnv):
             **actual_kwargs
         )
 
-    def sample_puck_xy(self):
-        return np.array([0, 0.6])
+    # def sample_puck_xy(self):
+    #     return np.array([-0.05, 0.6])
 
 
 class SawyerPushAndReachHurdleXYHarderEnv(SawyerPushAndReachHurdleXYEnv):

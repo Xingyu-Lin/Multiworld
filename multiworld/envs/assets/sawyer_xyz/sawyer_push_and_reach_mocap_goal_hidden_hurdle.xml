@@ -216,18 +216,66 @@
             <geom conaffinity="0" contype="0" pos="0 0 0" rgba="0.5 0.5 0.5 0" size="0.1 0.02 0.02" type="box"></geom>
         </body>
 
-        <body name="hurdle" pos="0.05 0.65 0.0">
+<!--        |-->
+        <body name="hurdle" pos="0.05 0.57 0.0">
             <inertial pos="0 0 0" mass='2000000000'/>
             <geom name="hurdlebox"
                   type="box"
                   pos="0 0 0"
-                  size="0.01 0.04 0.04"
+                  size="0.01 0.05 0.04"
+                  rgba="1 .0 0.0 1"
+                  contype="4"
+                  conaffinity="2"
+            />
+        </body>
+<!--            |-->
+<!--            |-->
+        <body name="hurdle1" pos="-0.1 0.62 0.0">
+            <inertial pos="0 0 0" mass='2000000000'/>
+            <geom name="hurdlebox1"
+                  type="box"
+                  pos="0 0 0"
+                  size="0.01 0.13 0.04"
+                  rgba="1 .0 0.0 1"
+                  contype="4"
+                  conaffinity="2"
+            />
+        </body>
+        <body name="hurdle2" pos="0.03 0.74 0.0">
+            <inertial pos="0 0 0" mass='2000000000'/>
+            <geom name="hurdlebox2"
+                  type="box"
+                  pos="0 0 0"
+                  size="0.12 0.01 0.04"
                   rgba="1 .0 0.0 1"
                   contype="4"
                   conaffinity="2"
             />
         </body>
 
+        <body name="hurdle3" pos="0.03 0.5 0.0">
+            <inertial pos="0 0 0" mass='2000000000'/>
+            <geom name="hurdlebox3"
+                  type="box"
+                  pos="0 0 0"
+                  size="0.12 0.01 0.04"
+                  rgba="1 .0 0.0 1"
+                  contype="4"
+                  conaffinity="2"
+            />
+        </body>
+
+        <body name="hurdle4" pos="0.16 0.62 0.0">
+            <inertial pos="0 0 0" mass='2000000000'/>
+            <geom name="hurdlebox4"
+                  type="box"
+                  pos="0 0 0"
+                  size="0.01 0.13 0.04"
+                  rgba="1 .0 0.0 1"
+                  contype="4"
+                  conaffinity="2"
+            />
+        </body>
 <!--        <body name="hurdle2" pos="0.0 0.68 0.0">-->
 <!--            <inertial pos="0 0 0" mass='2000000000'/>-->
 <!--            <geom name="hurdlebox2"-->
