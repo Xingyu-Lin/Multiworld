@@ -549,7 +549,7 @@ def register_mujoco_envs():
         )
     )
 
-    # Hurdle
+    # Hurdle U shape
     register(
         id='SawyerPushHurdle-v0',
         entry_point='multiworld.envs.mujoco.sawyer_xyz'
@@ -561,11 +561,60 @@ def register_mujoco_envs():
         kwargs=dict(
             force_puck_in_goal_space=False,
             mocap_low=(-0.1, 0.55, 0.0),
-            mocap_high=(0.1, 0.65, 0.5),
+            mocap_high=(0.2, 0.75, 0.5),
             hand_goal_low=(-0.1, 0.55),
             hand_goal_high=(0.1, 0.65),
             puck_goal_low=(0.1, 0.55),
             puck_goal_high=(0.11, 0.6),
+
+            hide_goal=True,
+            reward_info=dict(
+                type="state_distance",
+            ),
+        )
+    )
+
+    # Hurdle start from middle
+    register(
+        id='SawyerPushHurdleMiddle-v0',
+        entry_point='multiworld.envs.mujoco.sawyer_xyz'
+                    '.sawyer_push_hurdle_middle:SawyerPushAndReachHurdleMiddleXYEasyEnv',
+        tags={
+            'git-commit-hash': 'b8d77fef5f3ebe4c1c9c3874a5e3faaab457a350',
+            'author': 'steven',
+        },
+        kwargs=dict(
+            force_puck_in_goal_space=False,
+            mocap_low=(-0.15, 0.5, 0.0),
+            mocap_high=(0.25, 0.65, 0.5),
+            hand_goal_low=(-0.1, 0.55),
+            hand_goal_high=(0.1, 0.65),
+            puck_goal_low=(0.1, 0.55),
+            puck_goal_high=(0.11, 0.65),
+
+            hide_goal=True,
+            reward_info=dict(
+                type="state_distance",
+            ),
+        )
+    )
+    # Hurdle is horizontal
+    register(
+        id='SawyerPushHurdleHorizontal-v0',
+        entry_point='multiworld.envs.mujoco.sawyer_xyz'
+                    '.sawyer_push_hurdle_horizontal:SawyerPushAndReachHurdleHorizontalXYEasyEnv',
+        tags={
+            'git-commit-hash': 'b8d77fef5f3ebe4c1c9c3874a5e3faaab457a350',
+            'author': 'steven',
+        },
+        kwargs=dict(
+            force_puck_in_goal_space=False,
+            mocap_low=(-0.15, 0.5, 0.0),
+            mocap_high=(0.15, 0.7, 0.5),
+            hand_goal_low=(-0.1, 0.55),
+            hand_goal_high=(0.1, 0.65),
+            puck_goal_low=(0.0, 0.707),
+            puck_goal_high=(0.06, 0.707),
 
             hide_goal=True,
             reward_info=dict(
