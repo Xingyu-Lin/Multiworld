@@ -548,7 +548,30 @@ def register_mujoco_envs():
             ),
         )
     )
-
+    # Push T-shape puck
+    pi = 3.14159265
+    register(
+        id='SawyerPushT-v0',
+        entry_point='multiworld.envs.mujoco.sawyer_xyz'
+                    '.sawyer_push_T:SawyerPushAndReachTXYEasyEnv',
+        tags={
+            'git-commit-hash': 'b8d77fef5f3ebe4c1c9c3874a5e3faaab457a350',
+            'author': 'steven',
+        },
+        kwargs=dict(
+            force_puck_in_goal_space=False,
+            mocap_low=(-0.1, 0.55, 0.0),
+            mocap_high=(0.1, 0.65, 0.5),
+            hand_goal_low=(-0.1, 0.55),
+            hand_goal_high=(0.1, 0.65),
+            puck_goal_low=(-0.15, 0.6, -pi/2),
+            puck_goal_high=(0.15, 0.65, pi/2),
+            hide_goal=True,
+            reward_info=dict(
+                type="state_distance",
+            ),
+        )
+    )
     # Hurdle U shape
     register(
         id='SawyerPushHurdle-v0',
